@@ -1,0 +1,3 @@
+We did use ChatGPT in order to understand the context of the game and the 
+purpose of some of the functions. We also used ChatGPT to help us with syntax
+as we were getting a error that was troubling with malloc() we used.

@@ -1,0 +1,3 @@
+Partner Name: Anaika Pathak (34432977)
+Partner Functions: Complete deck.c file; player.c: add_card() remove_card() check_add_book() search()
+
