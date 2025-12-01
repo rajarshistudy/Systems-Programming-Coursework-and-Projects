@@ -1,8 +1,6 @@
 /* 
  * tsh - A tiny shell program with job control
  * 
- * Rajarshi Das 34220662
- * Anaika Pathak 34432977
  */
 #include <stdio.h>
 #include <stdlib.h>
