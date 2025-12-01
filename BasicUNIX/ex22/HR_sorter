@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Put your code here
+# You may only use the following external programs: ls, echo, awk, cat, grep, sort, wc, bc
+
+
+keywords=()
+weights=()
+
+while read -r keyword weight; do
+  keywords+=("$keyword")
+  weights+=("$weight")
+done < input.txt
+
+for file in submissions/*; do
+  score=0
+  for i in "${!keywords[@]}"; do
+    keyword="${keywords[$i]}"
+    weight="${weights[$i]}"
+    count=$(grep -oiF -- "$keyword" "$file" | wc -l)
+    score=$(awk -v s="$score" -v c="$count" -v w="$weight" 'BEGIN {print s + c * w}')
+  done
+  printf "%s %s\n" "$(basename "$file")" "$score"
+done | sort -k2,2nr -k1,1
